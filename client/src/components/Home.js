@@ -38,17 +38,17 @@ export default function Home() {
     return (
         <>
             <AppBar />
-            <Box sx={{ background: `url(${Wedding})`, width: { xs: '300vw', sm: '100vw', md: '100vw', lg: '100vw', xl: '100vw' }, minHeight: { xs: '110vh', sm: '100vh', md: '100vh', lg: '110vh', xl: '110vh' }, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', webkitBackgroundStyle: 'cover' }}>
+            <Box sx={{ background: `url(${Wedding})`, width: { xs: '100%', sm: '100vw', md: '100vw', lg: '100vw', xl: '100vw' }, minHeight: { xs: '100vh', sm: '100vh', md: '100vh', lg: '110vh', xl: '110vh' }, backgroundSize: {xs: '400%',lg:'cover'}, backgroundRepeat: 'no-repeat', webkitBackgroundStyle: 'cover' }}>
                 <Box sx={{ display: {xs: 'none', sm: 'none', md: 'inline', lg: 'inline' }, position: 'absolute', top: {xs: 150, sm: 10 , md: 10, lg: 20 }, left: 30, overflow: 'none' }}>
                     <Typography sx={{ fontFamily: "'Righteous', cursive", color: 'white', opacity: .1, fontSize: {xs: '5rem', sm: '10rem', md:'17rem', lg: '17rem'} }}>Zaruba</Typography>
                     <Typography sx={{ fontFamily: "'Righteous', cursive", color: 'white', opacity: .1, fontSize: {xs: '5rem', sm: '10rem', md:'17rem', lg: '17rem'} }}>Zylks</Typography>
                 </Box>
-                <Box sx={{ position: 'absolute', right: 800, top: 300, display: 'flex', flexDirection: 'row', overflow: 'hidden' }}>
-                    <Typography sx={{ fontFamily: "'Righteous', cursive", fontSize: '5rem', color: 'white' }}>Marija </Typography>
-                    <Typography sx={{ fontFamily: "'Cinzel Decorative', cursive", fontSize: '7rem', color: 'gold', fontWeight: 700, opacity: .9 }}>&</Typography>
-                    <Typography sx={{ fontFamily: "'Righteous', cursive", fontSize: '5rem', color: 'white' }}>Trevor</Typography>
+                <Box sx={{ position: 'absolute', right: {xs: 10, sm: 10, md: 800, lg: 850, xl: 800}, top: 310, display: 'flex', flexDirection: 'row', overflow: 'hidden' }}>
+                    <Typography sx={{ fontFamily: "'Righteous', cursive", fontSize: {xs: '3rem', lg: '5rem', xl:'5rem'}, color: 'white' }}>Marija </Typography>
+                    <Typography sx={{ fontFamily: "'Cinzel Decorative', cursive", fontSize: {xs: '4rem',xl:'7rem'}, color: 'gold', fontWeight: 700, opacity: .9 }}>&</Typography>
+                    <Typography sx={{ fontFamily: "'Righteous', cursive", fontSize: {xs: '3rem', lg: '5rem', xl:'5rem'}, color: 'white' }}>Trevor</Typography>
                 </Box>
-                <Box sx={{ width: {xs: '80vw', sm: '80vw', md: '40vw', lg: '40vw'}, position: 'absolute', top: 450, left: {xs: 40, sm: 60, md: 60, lg: 60, xl: 60}}}>
+                <Box sx={{ width: {xs: '80vw', sm: '80vw', md: '40vw', lg: '40vw'}, position: 'absolute', top: {xs: 400, lg: 420 ,xl: 450}, left: {xs: 40, sm: 60, md: 60, lg: 60, xl: 60}}}>
                     <Typography sx={{ fontFamily: "'Poiret One', cursive;", color: 'white', fontSize: '1.2rem' }}>
                         Together with their families
                         Marija Zaruba
@@ -62,7 +62,7 @@ export default function Home() {
                 </Box>
                 <Box>
                     {/* <Box component='img' src={Crown} sx={{ width: '6.5%', position: 'absolute', right: 170, top: 313, zIndex: 1, transform: 'rotate(30deg)' }} /> */}
-                    <Typography onClick={openDialog} onMouseEnter={() => setRSVP(!rsvp)} onMouseLeave={() => setRSVP(!rsvp)} sx={{ fontFamily: "'Righteous', cursive", fontSize: {xs: '5rem', sm: '5rem', md: '10rem', lg: '10rem', xl: '10rem'}, color: rsvp ? 'gold' : 'white', position: 'absolute', top: 650, right: {xs: 85, sm: 200, md: 200, lg: 200, xl: 200}, textDecoration: 'none' }}>RSVP</Typography>
+                    <Typography onClick={openDialog} onMouseEnter={() => setRSVP(!rsvp)} onMouseLeave={() => setRSVP(!rsvp)} sx={{ fontFamily: "'Righteous', cursive", fontSize: {xs: '5rem', sm: '5rem', md: '10rem', lg: '10rem', xl: '10rem'}, color: rsvp ? 'gold' : 'white', position: 'absolute', top: {xs: 650, lg: 300, xl: 150}, right: {xs: 88, sm: 200, md: 200, lg: 200, xl: 200}, textDecoration: 'none' }}>RSVP</Typography>
                 </Box>
                
               
