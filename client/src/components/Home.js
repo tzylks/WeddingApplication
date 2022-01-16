@@ -35,46 +35,20 @@ export default function Home() {
             });
     }, []);
 
-    const [name, setName] = useState('')
-    const [plusone, setPlusOne] = useState(false)
-
-    const userForm = (e) => {
-        setName(e.target.value)
-    }
-
-    const submitForm = (e) => {
-        e.preventDefault()
-        const newUser = {
-            name,
-            plusone
-        }
-        fetch('/users', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(newUser)
-        }).then(res => res.json()).then(console.log)
-    }
-
-    const slideCheck = () => {
-        setPlusOne(!plusone)
-    }
-
     return (
         <>
             <AppBar />
             <Box sx={{ background: `url(${Wedding})`, width: { xs: '300vw', sm: '100vw', md: '100vw', lg: '100vw', xl: '100vw' }, minHeight: { xs: '110vh', sm: '100vh', md: '100vh', lg: '110vh', xl: '110vh' }, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', webkitBackgroundStyle: 'cover' }}>
-                <Box sx={{ position: 'absolute', top: 20, left: 30, overflow: 'none' }}>
-                    <Typography sx={{ fontFamily: "'Righteous', cursive", color: 'white', opacity: .1, fontSize: '17rem' }}>Zaruba</Typography>
-                    <Typography sx={{ fontFamily: "'Righteous', cursive", color: 'white', opacity: .1, fontSize: '17rem' }}>Zylks</Typography>
+                <Box sx={{ display: {xs: 'none', sm: 'none', md: 'inline', lg: 'inline' }, position: 'absolute', top: {xs: 150, sm: 10 , md: 10, lg: 20 }, left: 30, overflow: 'none' }}>
+                    <Typography sx={{ fontFamily: "'Righteous', cursive", color: 'white', opacity: .1, fontSize: {xs: '5rem', sm: '10rem', md:'17rem', lg: '17rem'} }}>Zaruba</Typography>
+                    <Typography sx={{ fontFamily: "'Righteous', cursive", color: 'white', opacity: .1, fontSize: {xs: '5rem', sm: '10rem', md:'17rem', lg: '17rem'} }}>Zylks</Typography>
                 </Box>
                 <Box sx={{ position: 'absolute', right: 800, top: 300, display: 'flex', flexDirection: 'row', overflow: 'hidden' }}>
                     <Typography sx={{ fontFamily: "'Righteous', cursive", fontSize: '5rem', color: 'white' }}>Marija </Typography>
                     <Typography sx={{ fontFamily: "'Cinzel Decorative', cursive", fontSize: '7rem', color: 'gold', fontWeight: 700, opacity: .9 }}>&</Typography>
                     <Typography sx={{ fontFamily: "'Righteous', cursive", fontSize: '5rem', color: 'white' }}>Trevor</Typography>
                 </Box>
-                <Box sx={{ width: '40vw', position: 'absolute', top: 450, left: 60 }}>
+                <Box sx={{ width: {xs: '80vw', sm: '80vw', md: '40vw', lg: '40vw'}, position: 'absolute', top: 450, left: {xs: 40, sm: 60, md: 60, lg: 60, xl: 60}}}>
                     <Typography sx={{ fontFamily: "'Poiret One', cursive;", color: 'white', fontSize: '1.2rem' }}>
                         Together with their families
                         Marija Zaruba
@@ -87,19 +61,19 @@ export default function Home() {
                     </Typography>
                 </Box>
                 <Box>
-                    <Box component='img' src={Crown} sx={{ width: '6.5%', position: 'absolute', right: 170, top: 313, zIndex: 1, transform: 'rotate(30deg)' }} />
-                    <Typography onClick={openDialog} onMouseEnter={() => setRSVP(!rsvp)} onMouseLeave={() => setRSVP(!rsvp)} sx={{ fontFamily: "'Righteous', cursive", fontSize: '10rem', color: rsvp ? 'gold' : 'white', position: 'absolute', top: 300, right: 200, textDecoration: 'none' }}>RSVP</Typography>
+                    {/* <Box component='img' src={Crown} sx={{ width: '6.5%', position: 'absolute', right: 170, top: 313, zIndex: 1, transform: 'rotate(30deg)' }} /> */}
+                    <Typography onClick={openDialog} onMouseEnter={() => setRSVP(!rsvp)} onMouseLeave={() => setRSVP(!rsvp)} sx={{ fontFamily: "'Righteous', cursive", fontSize: {xs: '5rem', sm: '5rem', md: '10rem', lg: '10rem', xl: '10rem'}, color: rsvp ? 'gold' : 'white', position: 'absolute', top: 650, right: {xs: 85, sm: 200, md: 200, lg: 200, xl: 200}, textDecoration: 'none' }}>RSVP</Typography>
                 </Box>
-                <Box>
-                </Box>
+               
+              
             </Box>
             {open ?
-                <Dialog open={open} onClose={openDialog} PaperProps={{style: {background: '#212121', border: '50px solid transparent', borderImage: `url(${Border}) 100 stretch`}}}>
+                <Dialog open={open} onClose={openDialog} PaperProps={{style: {background: '#212121', border: {xs: 'none', xl: '50px solid transparent'}, borderImage: {xs: 'none', sm: 'none', xl: `url(${Border}) 100 stretch`}}}}>
                     <DialogTitle id="alert-dialog-title" sx={{textAlign: 'center', color: 'white', fontFamily: "'Poiret One', cursive;", fontSize: '4rem'}}>
                         {"RSVP"}
                     </DialogTitle>
                     <DialogContent>
-                        <DialogContentText id="alert-dialog-description" sx={{textAlign: 'center', color: 'white', fontFamily: "'Poiret One', cursive;", fontSize: '1.2rem', mb: '4vh' }}>
+                        <DialogContentText id="alert-dialog-description" sx={{textAlign: 'center', color: 'white', fontFamily: "'Poiret One', cursive;", fontSize: '1.2rem', mb: '4vh', width: '100%' }}>
                             We are so excited to have you! Please let us know if you will be attending with a guest -- as this will help us plan accordingly.
                         </DialogContentText>
                         <SignUp open={open} setOpen={setOpen} />

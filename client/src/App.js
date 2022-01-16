@@ -6,6 +6,7 @@ import Wedding from './wedding.jpeg'
 import AppBar from './components/AppBar'
 import SignUp from './components/SignUp'
 import Home from './components/Home'
+import GuestList from './components/GuestList.js'
 import './App.css'
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <BrowserRouter>
       <Switch>
         <Route path="/RSVP" component={() => <SignUp />} />
+        <Route path="/guestlist" component={() => <GuestList />} />
         <Route path="/" component={() => <Home /> } />
         </Switch>
       </BrowserRouter>
